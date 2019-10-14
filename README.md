@@ -1,6 +1,6 @@
 # fonk-bic-validator
 
-[![CircleCI](https://badgen.net/github/status/Lemoncode/fonk-bic-validator/master/ci?icon=circleci&label=circleci)](https://circleci.com/gh/Lemoncode/fonk-bic-validator/tree/master)
+[![CircleCI](https://badgen.net/github/status/Lemoncode/fonk-bic-validator/master?icon=circleci&label=circleci)](https://circleci.com/gh/Lemoncode/fonk-bic-validator/tree/master)
 [![NPM Version](https://badgen.net/npm/v/@lemoncode/fonk-bic-validator?icon=npm&label=npm)](https://www.npmjs.com/package/@lemoncode/fonk-bic-validator)
 [![bundle-size](https://badgen.net/bundlephobia/min/@lemoncode/fonk-bic-validator)](https://bundlephobia.com/result?p=@lemoncode/fonk-bic-validator)
 
