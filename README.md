@@ -16,7 +16,7 @@ We have the following form model:
 
 ```
 const myFormValues = {
-  product : 'shoes',
+  product: 'shoes',
   price: 20,
 }
 ```
@@ -27,7 +27,9 @@ We can add a bic validation to the myFormValues
 import { bic } from '@lemoncode/fonk-bic-validator';
 
 const validationSchema = {
-  price: [bic.validator],
+  field: {
+    price: [bic.validator],
+  },
 };
 ```
 
@@ -47,12 +49,14 @@ bic.setErrorMessage('El campo debe de ser numérico');
 import { bic } from '@lemoncode/fonk-bic-validator';
 
 const validationSchema = {
-  price: [
-    {
-      validator: bic.validator,
-      message: 'Error message only updated for the validation schema',
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: bic.validator,
+        message: 'Error message only updated for the validation schema',
+      },
+    ],
+  },
 };
 ```
 
