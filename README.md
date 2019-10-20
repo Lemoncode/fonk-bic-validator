@@ -8,7 +8,7 @@ This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings val
 
 // TODO: Update description and example.
 
-- Validate if a field of a form is marked as a BIC code format. 
+- Validate if a field of a form is marked as a BIC code format.
 
 How to add it to an existing form validation schema:
 
