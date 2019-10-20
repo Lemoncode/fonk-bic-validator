@@ -1,22 +1,37 @@
 import {
   FieldValidationFunctionSync,
   parseMessageWithCustomArgs,
+  ValidationResult,
 } from '@lemoncode/fonk';
 
-// TODO: Add validator type
-const VALIDATOR_TYPE = '';
+export const VALIDATOR_TYPE = 'BIC_VALIDATOR';
 
-// TODO: Add default message
-let defaultMessage = '';
+let defaultMessage = 'This is not in BIC correct format';
 export const setErrorMessage = message => (defaultMessage = message);
 
-const isDefined = value => value !== void 0 && value !== null && value !== '';
+const isDefined = (value: string) =>
+  value !== void 0 && value !== null && value !== '';
 
-export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
+export const validator: FieldValidationFunctionSync = (
+  fieldValidatorArgs
+): ValidationResult => {
   const { value, message = defaultMessage, customArgs } = fieldValidatorArgs;
 
-  // TODO: Add validator
-  const succeeded = !isDefined(value) || ...;
+  const hasCorrectLength = (value: string): boolean => {
+    return value.length === 8 || value.length === 11;
+  };
+
+  const containsLettersOnly = (value: string): boolean => {
+    const letters = /^[A-Za-z]+$/;
+    if (value.length > 8) {
+      value = value.substring(0, 8);
+    }
+    return value.match(letters) ? true : false;
+  };
+
+  const succeeded =
+    !isDefined(value) ||
+    (hasCorrectLength(value) && containsLettersOnly(value));
 
   return {
     succeeded,
