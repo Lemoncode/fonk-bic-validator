@@ -8,7 +8,7 @@ This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings val
 
 // TODO: Update description and example.
 
-- Validate if a field of a form ....
+- Validate if a field of a form is marked as a BIC code format. 
 
 How to add it to an existing form validation schema:
 
@@ -40,7 +40,7 @@ You can customize the error message displayed in two ways:
 ```javascript
 import { bic } from '@lemoncode/fonk-bic-validator';
 
-bic.setErrorMessage('El campo debe de ser numérico');
+bic.setErrorMessage('El campo debe ser numérico');
 ```
 
 - Locally just override the error message for this validationSchema:
