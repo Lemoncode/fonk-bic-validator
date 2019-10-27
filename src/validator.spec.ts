@@ -1,4 +1,5 @@
-import { validator, setErrorMessage, VALIDATOR_TYPE } from './validator';
+import { validator, VALIDATOR_TYPE } from './validator';
+import { setErrorMessage } from './validators.business';
 
 describe('fonk-bic-validator specs', () => {
   it('should return succeeded validation when it feeds value equals undefined', () => {
