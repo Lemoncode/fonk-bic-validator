@@ -21,8 +21,7 @@ Next 2 characters - ISO 3166-1 alpha-2 country code (only letters)
 Next 2 characters - location code (letters and digits) (passive participant will have "1" in the second character)
 Last 3 characters - branch code, optional ('XXX' for primary office) (letters and digits)
 
-
-* How to add it to an existing form validation schema:
+- How to add it to an existing form validation schema:
 
 We have the following form model:
 
