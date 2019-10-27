@@ -81,7 +81,7 @@ describe('fonk-bic-validator specs', () => {
   });
   it('should succeeded  when it has 11 length value', () => {
     // Arrange
-    const value = 'BBVAESMM000';
+    const value = 'BCVEVECAXXX';
 
     setErrorMessage('');
 
@@ -97,7 +97,7 @@ describe('fonk-bic-validator specs', () => {
   });
   it('should succeeded  when it has 8 length value', () => {
     // Arrange
-    const value = 'BBVAESMM';
+    const value = 'BCRDDOSX';
 
     setErrorMessage('');
 

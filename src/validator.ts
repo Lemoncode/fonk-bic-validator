@@ -6,10 +6,7 @@ import {
 import {
   defaultMessage,
   isDefined,
-  hasCorrectLength,
-  validFormatBusinessPartyIdentifier,
-  validFormatCountryCode,
-  validateOptionalPart,
+  checkValidBicCodeFormat,
 } from './validators.business';
 
 export const VALIDATOR_TYPE = 'BIC_VALIDATOR';
@@ -19,13 +16,7 @@ export const validator: FieldValidationFunctionSync = (
 ): ValidationResult => {
   const { value, message = defaultMessage, customArgs } = fieldValidatorArgs;
 
-  const succeeded =
-    !isDefined(value) ||
-    (hasCorrectLength(value) &&
-      validFormatBusinessPartyIdentifier(value, true) &&
-      validFormatCountryCode(value) &&
-      validFormatBusinessPartyIdentifier(value, false) &&
-      validateOptionalPart(value));
+  const succeeded = !isDefined(value) || checkValidBicCodeFormat(value);
 
   return {
     succeeded,
