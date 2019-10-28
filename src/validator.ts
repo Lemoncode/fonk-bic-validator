@@ -1,22 +1,22 @@
 import {
   FieldValidationFunctionSync,
   parseMessageWithCustomArgs,
+  ValidationResult,
 } from '@lemoncode/fonk';
+import {
+  defaultMessage,
+  isDefined,
+  checkValidBicCodeFormat,
+} from './validators.business';
 
-// TODO: Add validator type
-const VALIDATOR_TYPE = '';
+export const VALIDATOR_TYPE = 'BIC_VALIDATOR';
 
-// TODO: Add default message
-let defaultMessage = '';
-export const setErrorMessage = message => (defaultMessage = message);
-
-const isDefined = value => value !== void 0 && value !== null && value !== '';
-
-export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
+export const validator: FieldValidationFunctionSync = (
+  fieldValidatorArgs
+): ValidationResult => {
   const { value, message = defaultMessage, customArgs } = fieldValidatorArgs;
 
-  // TODO: Add validator
-  const succeeded = !isDefined(value) || ...;
+  const succeeded = !isDefined(value) || checkValidBicCodeFormat(value);
 
   return {
     succeeded,
